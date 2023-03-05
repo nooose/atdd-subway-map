@@ -1,4 +1,4 @@
-package subway;
+package subway.domain;
 
 import javax.persistence.*;
 
@@ -10,10 +10,15 @@ public class Station {
     @Column(length = 20, nullable = false)
     private String name;
 
-    public Station() {
+    protected Station() {
     }
 
     public Station(String name) {
+        this(null, name);
+    }
+
+    public Station(Long id, String name) {
+        this.id = id;
         this.name = name;
     }
 
